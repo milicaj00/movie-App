@@ -1,0 +1,50 @@
+body{
+    background-color: rgb(39, 38, 38);
+    color: whitesmoke;
+}
+.slider{
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+.slide{
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+}
+.movieImage{
+    width: 240px;
+    height: 150px;
+    object-fit: cover;
+}
+.movie{
+    width: 240px;
+    height: 150px;
+}
+.selected{
+    border: 3px solid red;
+}
+.error{
+    color: red;
+}
+.mainDivLogin
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    margin-top: 15%;
+}
+.divData{
+    margin: 1%;
+}
+.divData > input{
+    padding: 0.3%;
+    margin: 0.3%;
+}
+.genreName{
+    text-align: left;
+}
+.mainSlider{
+    margin-left: 2%;
+}
