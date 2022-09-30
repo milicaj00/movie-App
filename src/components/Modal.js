@@ -9,12 +9,6 @@ const Modal = props => {
             <div className="modal">
                 <div className="modal-body">{props.children}</div>
             </div>
-           
-                {/* <IconButton
-                    className="btnZatvori"
-                    onClick={props.onClose}
-                    disableRipple={true}
-                > */}
                 
         </div>,
 

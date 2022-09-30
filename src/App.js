@@ -3,22 +3,30 @@ import "../src/styles/style.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
 import Movies from "./components/Movies";
-import { SelectedContextProvider } from "./context/SelectedContext";
+import { Navigate } from "react-router-dom";
 
 const App = () => {
     return (
-        <SelectedContextProvider>
-            <div className="App">
-                <Router>
-                    <Routes>
-                        <Route path="/" element={<Login />} />
-                        <Route path="/movies" element={<Movies />} />
+        <div className="App">
+            <Router>
+                <Routes>
+                    <Route path="/" element={<Login />} />
 
-                        <Route path="*" element={<div>Not found</div>} />
-                    </Routes>
-                </Router>
-            </div>
-        </SelectedContextProvider>
+                    <Route
+                        path="/movies"
+                        element={
+                            localStorage.getItem("access-token") ? (
+                                <Movies />
+                            ) : (
+                                <Navigate replace to="/" />
+                            )
+                        }
+                    />
+
+                    <Route path="*" element={<div>Not found</div>} />
+                </Routes>
+            </Router>
+        </div>
     );
 };
 

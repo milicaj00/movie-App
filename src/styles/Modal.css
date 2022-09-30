@@ -1,8 +1,5 @@
 .modal {
-    /* overflow-y: initial !important; */
-    /* background-color:inherit; */
-  
-    /* position: fixed; */
+
     max-height: 86vh;
     overflow-y: auto;
    
@@ -18,13 +15,7 @@
     margin: 2vh;
     margin-top: 10vh;
 
-
     background-color: white;
-
-    /* top: 10vh;
-    padding: 1rem;
-    z-index: 30; */
-  
   }
   
   .btnZatvori {
@@ -40,7 +31,6 @@
   @media (min-width: 600px) {
     .modal {
       width: 40rem;
-      /* left: calc(50% - 20rem); */
       align-self: center;
     }
   }
@@ -58,7 +48,6 @@
   }
   
   .poz {
-    /* display: block !important; */
     position: fixed;
     top: 0;
     left: 0;
@@ -74,40 +63,5 @@
   .modal-body {
     padding: 2vh;
     top: 10vh;
-    /*display: flex; */
-  }
-  
-  /* .modal{
-    display: block !important; 
-  }
-  
-  
-  .modal-dialog{
-    overflow-y: initial !important
-  }
-  .modal-body{
-    height: 80vh;
-    overflow-y: auto;
-  } */
-  
-  /* width */
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    border-radius: 4px;
-    background: #888;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555;
-    cursor: pointer;
+    margin: 3%;
   }

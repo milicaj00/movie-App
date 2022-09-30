@@ -1,5 +1,4 @@
 import { useState, useEffect, useContext } from "react";
-import { SelectedContext } from "../context/SelectedContext";
 import Slider from "./Slider";
 
 // let matrix=[];
@@ -24,7 +23,7 @@ const Movies = () => {
                         i:
                             selected.i + 1 == matrix.length
                                 ? selected.i
-                                : selected.i + 1
+                                : selected.i + 1,
                     }));
                 }
                 break;
@@ -62,8 +61,6 @@ const Movies = () => {
         <div>
             {matrix.map((g, i) => (
                 <div key={g.id}>
-                    {/* {console.log(selected)} */}
-
                     <Slider
                         genre={g}
                         niz={matrix[i]}
