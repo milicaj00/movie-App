@@ -12,16 +12,7 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<Login />} />
 
-                    <Route
-                        path="/movies"
-                        element={
-                            localStorage.getItem("access-token") ? (
-                                <Movies />
-                            ) : (
-                                <Navigate replace to="/" />
-                            )
-                        }
-                    />
+                    <Route path="/movies" element={<Movies />} />
 
                     <Route path="*" element={<div>Not found</div>} />
                 </Routes>
