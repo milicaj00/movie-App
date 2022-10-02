@@ -35,7 +35,9 @@ const Slider = props => {
 
         window.addEventListener('resize', handleWindowResize);
 
+        
     }, []);
+    
 
     function handleWindowResize() {
        setBroj(parseInt(window.innerWidth / 220))
@@ -55,18 +57,16 @@ const Slider = props => {
 
     useEffect(()=>{
  
-        if(props.select && props.j >= broj && props.j < allMovies.length)
+        if(props.select && props.j >= broj )
         {
             setMovies(allMovies.slice(props.j - broj + 1, props.j + 1))
 
         }else if (props.select && props.j < broj){
-           if(props.j == 0)
-           {
-                setMovies(allMovies.slice(0, broj));
-           }  
+          
+            setMovies(allMovies.slice(0, broj)); 
         }
 
-    },[props.j]);
+    },[props.j, props.select]);
 
     const onKey = event => {
         if (event.key === "Escape") {
