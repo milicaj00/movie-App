@@ -59,7 +59,7 @@ const Slider = props => {
         {
             setMovies(allMovies.slice(props.j - broj + 1, props.j + 1))
 
-        }else if (props.select && props.j <= broj){
+        }else if (props.select && props.j < broj){
            if(props.j == 0)
            {
                 setMovies(allMovies.slice(0, broj));

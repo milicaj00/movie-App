@@ -5,7 +5,7 @@ import Slider from "./Slider";
 
 const Movies = () => {
     const genre = require("../genres.json").genres;
-    const [matrix, setMatrix] = useState(genre);
+    const [matrix, setMatrix] = useState(Array.apply(null, Array(genre.length)).map(function (x, i) { return new Array(); }));
     const [selected, setSelected] = useState({ i: 0, j: 0 });
 
     useEffect(() => {
@@ -24,6 +24,7 @@ const Movies = () => {
                             selected.i + 1 == matrix.length
                                 ? selected.i
                                 : selected.i + 1,
+                        j:0
                     }));
                 }
                 break;
@@ -31,15 +32,16 @@ const Movies = () => {
                 {
                     setSelected(selected => ({
                         ...selected,
-                        i: selected.i != 0 ? selected.i - 1 : selected.i
+                        i: selected.i != 0 ? selected.i - 1 : selected.i,
+                        j: 0
                     }));
                 }
                 break;
             case "ArrowRight":
                 {
-                    setSelected(selected => ({
+                    setSelected(selected =>  ({
                         ...selected,
-                        j: selected.j + 1 == matrix[selected.i].length ? selected.j : selected.j + 1
+                        j: selected.j + 1 == Object.keys(matrix[selected.i]).length ? selected.j : selected.j + 1
                     }));
                 }
                 break;
@@ -59,7 +61,7 @@ const Movies = () => {
 
     return (
         <div>
-            {matrix.map((g, i) => (
+            {genre.map((g, i) => (
                 <div key={g.id}>
                     <Slider
                         genre={g}
